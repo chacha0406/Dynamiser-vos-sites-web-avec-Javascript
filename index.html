@@ -11,46 +11,50 @@
 </head>
 <body>
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center ligne-haut">
             <button class="btn" id="newgame" type="button">
                 <ion-icon name="add-circle-outline"></ion-icon>
                 <label for="newgame">NEW GAME</label>
             </button>
         </div>
-        <div class="row justify-content-around">
-            <div class="col-4">
+
+        <div class="row justify-content-around ligne-milieu">
+            <div class="col-4 align-self-center">
                 <h2 class="joueur" id="joueur1">PLAYER 1</h2>
                 <p class="score-total" id="score-joueur1">0</p>
-
-                <div>
-                    <p>CURRENT</p>
-                    <p class="score-temporaire" id="score-temp-player1">0</p>
-                </div>
             </div>
 
-            <div class="col-4">
-                <div class="row justify-content-center">
+            <div class="col-4 align-self-center">
+                <img src="../Jeu/Images/1.png" alt="dé1" id="résultat-dé">
+            </div>
+            
+            <div class="col-4 align-self-center">
+                <h2 class="joueur" id="joueur2">PLAYER 2</h2>
+                <p class="score-total" id="score-joueur2">0</p>
+            </div>
+        </div>
+
+        <div class="row justify-content-around ligne-bas">
+            <div class="col-4 align-self-center">
+                <p>CURRENT</p>
+                <p class="score-temporaire" id="score-temp-player1">0</p>
+            </div>
+            
+            <div class="col-4 align-self-center">
                     <button class="btn" id="rolldice" type="button">
                         <ion-icon name="refresh-circle-outline"></ion-icon>
                         <label for="rolldice">ROLL DICE</label>
                     </button>
-                </div>
-                <div class="row justify-content-center">
+                    <br>
                     <button class="btn" id="hold" type="button">
                         <ion-icon name="download-outline"></ion-icon>
                         <label for="hold">HOLD</label>
                     </button>
-                </div>
-
             </div>
-            <div class="col-4">
-                <h2 class="joueur" id="joueur2">PLAYER 2</h2>
-                <p class="score-total" id="score-joueur2">0</p>
-
-                <div>
-                    <p>CURRENT</p>
-                    <p class="score-temporaire" id="score-temp-player2">0</p>
-                </div>
+                
+            <div class="col-4 align-self-center">
+                <p>CURRENT</p>
+                <p class="score-temporaire" id="score-temp-player2">0</p>
             </div>
         </div>
     </div>
