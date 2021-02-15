@@ -20,3 +20,32 @@ body {
 .ligne-bas {
     height: 45%;
 }
+
+div .btn, .current {
+    font-size: 1.5vw;
+}
+
+.joueur {
+    font-size: 3vw;
+    font-weight: lighter;
+}
+
+.score-total {
+    font-size: 5vw;
+    font-weight: lighter;
+}
+
+ion-icon, .score-total {
+    color: rgb(255,67,67);
+}
+
+.div-current {
+    background-color: rgb(255,67,67);
+    font-weight: lighter;
+    width: 40px;
+}
+
+.score-temporaire {
+    color: white;
+    font-size: 3vw;
+}
