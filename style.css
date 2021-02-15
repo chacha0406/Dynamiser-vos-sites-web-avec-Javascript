@@ -4,6 +4,19 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-.col-4 {
+.container {
+    height: 100%;
     text-align: center;
+}
+
+.ligne-haut {
+    height: 10%;
+}
+
+.ligne-milieu {
+    height: 45%;
+}
+
+.ligne-bas {
+    height: 45%;
 }
