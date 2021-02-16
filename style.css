@@ -1,51 +1,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap');
 
-body {
+html, body {
     font-family: 'Lato', sans-serif;
+    text-align: center;
+    background-image: url(../Jeu/Images/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
 }
 
 .container {
     height: 100%;
-    text-align: center;
+    margin-bottom: 50px;
+    background-image: url(../Jeu/Images/background-jeu.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
+
+/*Dimensions des lignes*/
 .ligne-haut {
     height: 10%;
 }
 
-.ligne-milieu {
+.ligne-milieu, .ligne-bas {
     height: 45%;
 }
 
-.ligne-bas {
-    height: 45%;
-}
-
-div .btn, .current {
-    font-size: 1.5vw;
-}
-
+/*Style joueurs et score total*/
 .joueur {
     font-size: 3vw;
-    font-weight: lighter;
 }
 
 .score-total {
     font-size: 5vw;
-    font-weight: lighter;
 }
 
+/*Couleur des boutons*/
 ion-icon, .score-total {
     color: rgb(255,67,67);
 }
 
-.div-current {
+#tour-joueur {
+    color: rgb(255,67,67);
+    font-size: 3vw;
+}
+
+/*Style score temporaire*/
+.current, .score-temporaire {
     background-color: rgb(255,67,67);
-    font-weight: lighter;
-    width: 40px;
+    width: 150px;
+    margin: auto;
 }
 
 .score-temporaire {
     color: white;
     font-size: 3vw;
+}
+
+div .btn, .current {
+    font-size: 1.5vw;
 }
