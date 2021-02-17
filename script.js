@@ -4,10 +4,18 @@
 
 /*Bouton NEW GAME*/
 var newgame = document.getElementById('newgame')
-function NewGame() {
-  alert('Vous allez commencer une nouvelle partie')
-} newgame.addEventListener('click', NewGame)
 
+function NewGame() {
+    document.getElementById('score-joueur1').textContent = 0;
+    document.getElementById('score-joueur2').textContent = 0;
+    document.getElementById('score-temp-joueur1').textContent = 0;
+    document.getElementById('score-temp-joueur2').textContent = 0;
+    document.getElementById('résultat-dé').src = '../Jeu/Images/1.png';
+
+    alert('Vous allez commencer une nouvelle partie')
+} 
+
+newgame.addEventListener('click', NewGame)
 
 /*Bouton ROLL DICE*/
 var rolldice = document.getElementById('rolldice')
