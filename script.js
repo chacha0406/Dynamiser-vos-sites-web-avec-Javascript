@@ -26,7 +26,15 @@ newgame.addEventListener('click', NewGame)
 var rolldice = document.getElementById('rolldice')
 
 function RollDice() {
-    alert('Vous allez lancer le dé')
+    if (startGame) {
+        /*Lancer du dé aléatoirement avec image*/
+        var dice = Math.floor(Math.random() * 6 + 1);
+        var diceImg = document.querySelector('.dice img');
+
+        diceImg.src = '../Jeu/Images/' + dice + '.png';
+
+        
+    }
 } 
 
 rolldice.addEventListener('click', RollDice)
