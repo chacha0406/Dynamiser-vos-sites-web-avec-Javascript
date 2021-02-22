@@ -62,10 +62,14 @@ function nextPlayer() {
         playerTurn = 2
         currentScore = 0
         document.getElementById('score-temp-joueur1').textContent = 0;
+        document.getElementById('tour-joueur1').style.display = 'none';
+        document.getElementById('tour-joueur2').style.display = 'inline';
     } else {
         playerTurn = 1
         currentScore = 0
         document.getElementById('score-temp-joueur2').textContent = 0;
+        document.getElementById('tour-joueur2').style.display = 'none';
+        document.getElementById('tour-joueur1').style.display = 'inline';
     }
     return alert('Next Player !')  
 }
