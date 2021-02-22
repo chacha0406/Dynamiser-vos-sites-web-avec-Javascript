@@ -35,11 +35,11 @@ function RollDice() {
         diceImg.src = '../Jeu/Images/' + dice + '.png';
 
         /*Ajout du dé au score courant*/
-        if (dice === 1) {
-            nextPlayer()
-        } else {
+        if (dice !== 1) {
             currentScore += dice;
-            document.getElementById('score-temp-joueur' + playerTurn).textContent = currentScore
+            document.getElementById('score-temp-joueur' + playerTurn).textContent = currentScore    
+        } else {
+            nextPlayer()
         }
     }
 } 
@@ -57,3 +57,15 @@ function Hold() {
 hold.addEventListener('click', Hold)
 
 /*Fonction nextPlayer*/
+function nextPlayer() {
+    if (playerTurn === 1) {
+        playerTurn = 2
+        currentScore = 0
+        document.getElementById('score-temp-joueur1').textContent = 0;
+    } else {
+        playerTurn = 1
+        currentScore = 0
+        document.getElementById('score-temp-joueur2').textContent = 0;
+    }
+    return alert('Next Player !')  
+}
