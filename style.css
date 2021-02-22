@@ -50,7 +50,7 @@ ion-icon, .score-total {
     color: rgb(255,67,67);
 }
 
-#tour-joueur {
+#tour-joueur1, #tour-joueur2 {
     color: rgb(255,67,67);
     font-size: 3vw;
 }
