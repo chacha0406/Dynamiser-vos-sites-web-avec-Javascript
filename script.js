@@ -1,5 +1,5 @@
 /*Déclaration des variables*/
-let startGame, diceNumber, playerScore, currentScore
+let startGame, diceNumber, playerScore, currentScore, playerTurn
 
 
 /*Bouton NEW GAME*/
@@ -16,6 +16,7 @@ function NewGame() {
     diceNumber = 0;
     playerScore = 0;
     currentScore = 0;
+    playerTurn = 1;
 
     alert('Vous allez commencer une nouvelle partie')
 } 
@@ -33,7 +34,13 @@ function RollDice() {
 
         diceImg.src = '../Jeu/Images/' + dice + '.png';
 
-        
+        /*Ajout du dé au score courant*/
+        if (dice === 1) {
+            nextPlayer()
+        } else {
+            currentScore += dice;
+            document.getElementById('score-temp-joueur' + playerTurn).textContent = currentScore
+        }
     }
 } 
 
@@ -48,3 +55,5 @@ function Hold() {
 } 
 
 hold.addEventListener('click', Hold)
+
+/*Fonction nextPlayer*/
