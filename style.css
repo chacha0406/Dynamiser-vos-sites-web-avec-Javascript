@@ -3,16 +3,21 @@
 html, body {
     font-family: 'Lato', sans-serif;
     text-align: center;
+}
+.background {
     background-image: url(../Jeu/Images/background.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
 }
 
 .container {
-    height: 100%;
-    margin-bottom: 50px;
+    overflow: hidden;
+    margin: auto;
+    height: 90%;
     background-image: url(../Jeu/Images/background-jeu.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -23,10 +28,12 @@ html, body {
 /*Dimensions des lignes*/
 .ligne-haut {
     height: 10%;
+    position: relative;
 }
 
 .ligne-milieu, .ligne-bas {
     height: 45%;
+    position: relative;
 }
 
 /*Style joueurs et score total*/
@@ -38,7 +45,7 @@ html, body {
     font-size: 5vw;
 }
 
-/*Couleur des boutons*/
+/*Style des boutons*/
 ion-icon, .score-total {
     color: rgb(255,67,67);
 }
