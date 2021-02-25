@@ -24,6 +24,11 @@ html, body {
     background-position: center;
 }
 
+img {
+    height: 170px;
+    width: 170px;
+}
+
 
 /*Dimensions des lignes*/
 .ligne-haut {
