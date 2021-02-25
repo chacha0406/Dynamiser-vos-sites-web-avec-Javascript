@@ -21,8 +21,6 @@ function NewGame() {
     round = 0;
     playerTurn = 1;
     winScore = 100;
-
-    alert('Vous allez commencer une nouvelle partie')
 } 
 
 newgame.addEventListener('click', NewGame)
@@ -84,15 +82,28 @@ function nextPlayer() {
         document.getElementById('tour-joueur2').style.display = 'none';
         document.getElementById('tour-joueur1').style.display = 'inline';
     }
-    return alert('Next Player !')  
+    alertNextPlayer()  
 }
 
 /*Fonction Win*/
 function Win() {
     if  (global1 >= winScore || global2 >= winScore) {
-        alert('Joueur '+ playerTurn + ' a gagné !');
+        alertWin()
         NewGame()
     } else {
         nextPlayer()
     }
+}
+
+/*Fonctions Alert*/
+function alertNewGame() {
+    swal ("Vous allez commencer une nouvelle partie !");
+}
+
+function alertNextPlayer() {
+    swal ("Next Player !");
+}
+
+function alertWin() {
+    swal ('Joueur '+ playerTurn + ' a gagné !', "Faisons une nouvelle partie");
 }
