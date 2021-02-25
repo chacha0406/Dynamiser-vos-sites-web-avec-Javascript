@@ -1,5 +1,5 @@
 /*Déclaration des variables*/
-let startGame, diceNumber, playerScore1, playerScore2, currentScore, playerTurn
+let startGame, diceNumber,  global1, global2, round, playerTurn, winScore
 
 
 /*Bouton NEW GAME*/
@@ -11,14 +11,16 @@ function NewGame() {
     document.getElementById('score-temp-joueur1').textContent = 0;
     document.getElementById('score-temp-joueur2').textContent = 0;
     document.getElementById('résultat-dé').src = '../Jeu/Images/1.png';
+    document.getElementById('tour-joueur1').style.display = 'inline';
     document.getElementById('tour-joueur2').style.display = 'none';
 
     startGame = true;
     diceNumber = 0;
-    playerScore1 = 0;
-    playerScore2 = 0;
-    currentScore = 0;
+    global1 = 0;
+    global2 = 0;
+    round = 0;
     playerTurn = 1;
+    winScore = 100;
 
     alert('Vous allez commencer une nouvelle partie')
 } 
@@ -38,8 +40,8 @@ function RollDice() {
 
         /*Ajout du dé au score courant*/
         if (dice !== 1) {
-            currentScore += dice;
-            document.getElementById('score-temp-joueur' + playerTurn).textContent = currentScore    
+            round += dice;
+            document.getElementById('score-temp-joueur' + playerTurn).textContent = round;  
         } else {
             nextPlayer()
         }
@@ -54,15 +56,13 @@ var hold = document.getElementById('hold')
 
 function Hold() {
     if (playerTurn === 1) {
-        playerScore1 += currentScore;
-        document.getElementById('score-joueur' + playerTurn).textContent = playerScore1
-        nextPlayer()
-
+        global1 += round;
+        document.getElementById('score-joueur' + playerTurn).textContent =  global1;
+        Win()
     } else {
-        playerScore2 += currentScore;
-        document.getElementById('score-joueur' + playerTurn).textContent = playerScore2
-        nextPlayer()
-
+        global2 += round;
+        document.getElementById('score-joueur' + playerTurn).textContent = global2;
+        Win()
     }
 } 
 
@@ -73,16 +73,26 @@ hold.addEventListener('click', Hold)
 function nextPlayer() {
     if (playerTurn === 1) {
         playerTurn = 2
-        currentScore = 0
+        round = 0
         document.getElementById('score-temp-joueur1').textContent = 0;
         document.getElementById('tour-joueur1').style.display = 'none';
         document.getElementById('tour-joueur2').style.display = 'inline';
     } else {
         playerTurn = 1
-        currentScore = 0
+        round = 0
         document.getElementById('score-temp-joueur2').textContent = 0;
         document.getElementById('tour-joueur2').style.display = 'none';
         document.getElementById('tour-joueur1').style.display = 'inline';
     }
     return alert('Next Player !')  
+}
+
+/*Fonction Win*/
+function Win() {
+    if  (global1 >= winScore || global2 >= winScore) {
+        alert('Joueur '+ playerTurn + ' a gagné !');
+        NewGame()
+    } else {
+        nextPlayer()
+    }
 }
