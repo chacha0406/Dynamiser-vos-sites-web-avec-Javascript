@@ -11,6 +11,7 @@ function NewGame() {
     document.getElementById('score-temp-joueur1').textContent = 0;
     document.getElementById('score-temp-joueur2').textContent = 0;
     document.getElementById('résultat-dé').src = '../Jeu/Images/1.png';
+    document.getElementById('tour-joueur2').style.display = 'none';
 
     startGame = true;
     diceNumber = 0;
