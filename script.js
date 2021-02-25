@@ -1,5 +1,5 @@
 /*Déclaration des variables*/
-let startGame, diceNumber, playerScore, currentScore, playerTurn
+let startGame, diceNumber, playerScore1, playerScore2, currentScore, playerTurn
 
 
 /*Bouton NEW GAME*/
@@ -15,7 +15,8 @@ function NewGame() {
 
     startGame = true;
     diceNumber = 0;
-    playerScore = 0;
+    playerScore1 = 0;
+    playerScore2 = 0;
     currentScore = 0;
     playerTurn = 1;
 
@@ -52,10 +53,21 @@ rolldice.addEventListener('click', RollDice)
 var hold = document.getElementById('hold')
 
 function Hold() {
-    alert('Vous allez sauvegarder vos points')
+    if (playerTurn === 1) {
+        playerScore1 += currentScore;
+        document.getElementById('score-joueur' + playerTurn).textContent = playerScore1
+        nextPlayer()
+
+    } else {
+        playerScore2 += currentScore;
+        document.getElementById('score-joueur' + playerTurn).textContent = playerScore2
+        nextPlayer()
+
+    }
 } 
 
 hold.addEventListener('click', Hold)
+
 
 /*Fonction nextPlayer*/
 function nextPlayer() {
